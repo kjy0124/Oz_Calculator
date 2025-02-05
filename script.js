@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (this.id === "clear") {
         display.value = "";
+      } else if (this.id === "equals") {
+        try {
+          display.value = eval(display.value);
+        } catch (e) {
+          display.value = "Error";
+        }
       } else {
         display.value += value;
       }
